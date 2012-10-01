@@ -1,0 +1,4 @@
+Betriebssysteme
+==============
+
+Dieses Git Repository enthält die Lösungen zu den Übungen welche während der Vorlesung gelöst werden.
