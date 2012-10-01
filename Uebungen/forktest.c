@@ -29,7 +29,6 @@ int main()
       printf("\t\t\tElternteil %d, Kind=%d\n",p,k); 
       warten();
     }
-    pid=wait(&status); 
     printf("\t\t\tIst Kindprozess beendet? PID war, %d\n",pid);
     while(1); /*auf  Abbruch durch <CTRL/C> warten*/
   }

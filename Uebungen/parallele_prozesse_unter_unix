@@ -15,5 +15,47 @@ Für wait() kann man folgende Funktionsparameter definieren:
        > 0    meaning wait for the child whose process  ID  is  equal  to  the
               value of pid.
 
+E 1.1 c)
+	waitpid(-1, &status, 0);
 
+E 1.1 d)
+Man kann prüfen ob der returnvlue ungeich -1 ist.
 
+E 1.1 e)
+
+E 1.2 a)
+Nein, es gibt keine Zombies.
+
+E 1.2 b) 
+Ja, jetzt kann man einen Zombieprozess erkennen. 
+E 1.2 a)
+Nein, es gibt keine Zombies.
+
+E 1.2 b) 
+Ja, jetzt kann man einen Zombieprozess erkennen.
+
+E 1.2 c)
+Nein, wenn mein User einen Prozess startet und ich mich vom System abmelde läuft der Prozess nicht weiter.
+Wenn ich aber den Prozess im Background als sevice starte und nicht unter meinem User luft dieser weiter.
+
+E 1.2 d)
+Ja, der Prozess kann nun auch nach dem Abmelden ausgeführt werden. Konsolenoutput könnte man zum Beispiel in ein Logfile schreiben, damit man es später nachlesen kann. Ansonsten kann Konsoleoutput nicht ausgegeben werden, da kein User angemeldet ist und somit kein Bildschirm da ist.
+
+E 1.3 a)
+Chaining:
+
+execl() / execlp() / execve():
+Bei diesen drei Funktionen gibt man die Pfade zu dem/den Programm/en an, welche man hintereinander ausführen will.
+
+execv() / execvp(), execvpe():
+Bei diesen drei Funktionen gibt man zuerst den Pfad zum Programm an, dannach übergibt execv() usw. den Pfad an das Folgeprogramm mittels einem Zeiger.
+
+execle() / execvpe():
+Mittels einem zusätzlich envp Argument kann man die Environmentvariabeln aus einem Pointer auslesen. Alle anderen Programme übernehmen die Environmentvariabeln aus der externen Variable environ.
+
+E 1.3 b)
+Der neue Prozess erbt file-descriptors.
+
+E 1.4 a)
+Wenn der execl() Befehl nicht mit einem Null Pointer terminiert.
+Wenn der Pfad zu "/bin/date" nicht stimmt.
