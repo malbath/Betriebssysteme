@@ -1,0 +1,19 @@
+E 1.1 a)
+Das Resultat des systemaufrufs wait() ist, dass der Prozess so lange wartet, bis der childprozess beendet ist. Der Parentprozess darf solange keine neuen Prozesse mehr starten. Sobald der Childprozess beendet ist, wird die PID des beendeten Childprozesses zurückgegeben. Bei einem Error wird die Zahl -1 zuückgegeben.
+
+E 1.1 b)
+Für wait() kann man folgende Funktionsparameter definieren:
+
+	< -1   meaning wait for any child process whose  process  group  ID  is
+              equal to the absolute value of pid.
+
+       -1     meaning wait for any child process.
+
+       0      meaning  wait  for  any  child process whose process group ID is
+              equal to that of the calling process.
+
+       > 0    meaning wait for the child whose process  ID  is  equal  to  the
+              value of pid.
+
+
+
